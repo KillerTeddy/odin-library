@@ -38,15 +38,15 @@ function createCard(book) {
     books.appendChild(card);
 }
 
-function addRemoveButtonListeners() {
-    const removeButtons = document.querySelectorAll('.remove-button');
-    removeButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const card = button.parentElement;
-        card.remove();
-      });
+const addRemoveButtonListeners = () => {
+    const books = document.querySelector('.books');
+    books.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-button')) {
+            const card = e.target.parentElement;
+            card.remove();
+        }
     });
-  }  
+}
 
 
 //use the add-book-button button to create a form
